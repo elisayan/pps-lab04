@@ -38,7 +38,7 @@ object Ex5Traversable:
     summon[Traversable[T]].foreach(container)(log)
 
   private def printAll[T[_] : Traversable, A](container: T[A]): Unit =
-    summon[Traversable[T]].foreach(container)(println(_))
+    summon[Traversable[T]].foreach(container)(println)
 
   @main def tryTraversable(): Unit =
     val s = Cons(1, Cons(2, Nil()))
