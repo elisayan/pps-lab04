@@ -35,7 +35,7 @@ object Ex4Summables:
     def zero: Double = 0
 
   given Summable[String] with
-    def sum(a: String, b: String): String = s"$a$b"
+    def sum(a: String, b: String): String = a + b
     def zero: String = ""
 
   @main def trySummables =
