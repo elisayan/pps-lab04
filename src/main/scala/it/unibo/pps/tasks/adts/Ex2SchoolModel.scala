@@ -141,10 +141,9 @@ object SchoolModel:
       case Cons(h, t) => Cons(h, distinct(t.filter(_ != h)))
       case Nil() => Nil()
 
-    private def append[A](s1: Sequence[A], s2: Sequence[A]): Sequence[A] =
-      s1 match
-        case Cons(h, t) => Cons(h, append(t, s2))
-        case Nil() => s2
+    private def append[A](s1: Sequence[A], s2: Sequence[A]): Sequence[A] = s1 match
+      case Cons(h, t) => Cons(h, append(t, s2))
+      case Nil() => s2
 
     extension (school: School)
       def courses: Sequence[String] = distinct(school.assignments.map((t, c) => c.name))
